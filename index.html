@@ -150,7 +150,7 @@ nav a:hover,nav a[aria-current]{color:white;border-color:#a7c3e0}
 main{padding-block:30px 42px}
 .intro{align-items:center;position:relative;min-height:138px;margin-bottom:26px;padding:4px 0 9px;border-bottom:1px solid var(--line)}
 .crumb{color:#586c80;margin-bottom:12px}
-h1{font-size:clamp(34px,4.3vw,57px);max-width:750px;letter-spacing:-.05em;line-height:1.03}
+h1{font-size:clamp(34px,4.3vw,57px);max-width:900px;letter-spacing:-.05em;line-height:1.03}
 .intro p:last-child:not(.crumb){margin-top:13px;font-size:16px;color:var(--muted)}
 .blueprint{display:block;width:236px;height:112px;color:#7894b0;flex:none;align-self:center;margin-right:5px}
 .layout{grid-template-columns:minmax(0,1fr) minmax(350px,400px);gap:26px}
@@ -422,7 +422,7 @@ function renderTable(){
   price.append(document.createTextNode((viewing==='other'?'от ':'')+fmt(row.price)+' ₽ '),
     el('small',viewing==='other'?'за м²':'за '+cat.unit));
   const choice=el('td'), button=el('button',row===selected?'Выбрано':'В расчёт','row-btn');
-  const arrow=el('span',row===selected?'✓':'↗');arrow.setAttribute('aria-hidden','true');
+  const arrow=el('span',row===selected?'✓':'→');arrow.setAttribute('aria-hidden','true');
   button.type='button';button.setAttribute('aria-pressed',String(row===selected));button.append(arrow);
   button.addEventListener('click',()=>{
    if(selected!==row){

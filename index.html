@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f6f2">
+<title>Прайс на порошковую окраску | ЛИДЕР</title>
+<style>
+:root{--paper:#f7f6f2;--white:#fff;--ink:#1d2833;--muted:#535e67;--line:#d9d9d3;--navy:#163552;--accent:#913b28;--peach:#f4ebe4;--focus:#2165a0}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.45 Arial,"Liberation Sans",sans-serif}
+a{color:inherit;text-underline-offset:3px}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1256px;margin:0 auto;padding-inline:38px}
+header{background:var(--white);border-bottom:1px solid var(--line)}
+.header-row{min-height:74px;display:flex;align-items:center;gap:36px;justify-content:space-between}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--navy);text-decoration:none;white-space:nowrap}
+.brand svg{width:31px;height:31px;flex:none}
+.brand strong{font-size:24px;letter-spacing:.09em;line-height:1}
+nav{align-self:stretch;display:flex;align-items:stretch;gap:27px;margin-right:auto;margin-left:25px}
+nav a{display:grid;place-items:center;text-decoration:none;color:var(--muted);font-size:14px;border-bottom:2px solid transparent;padding-top:2px}
+nav a:hover,nav a[aria-current]{color:var(--navy);border-color:var(--navy)}
+.tel{white-space:nowrap;text-decoration:none;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.tel:hover{text-decoration:underline}
+main{padding-block:39px 54px}
+.intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:29px}
+.crumb{font-size:13px;color:var(--muted);margin:0 0 13px}
+.crumb a{text-decoration:none}.crumb a:hover{text-decoration:underline}
+.crumb span{margin-inline:7px;color:#63686a}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(34px,4.3vw,58px);font-weight:750;line-height:.99;letter-spacing:-.05em;color:var(--navy);max-width:780px}
+.intro p:last-child:not(.crumb){margin-top:14px;color:var(--muted)}
+.pdf{align-self:end;display:inline-flex;gap:8px;align-items:center;color:var(--navy);font-size:14px;white-space:nowrap;margin-bottom:3px}
+.pdf svg,.clip svg{width:17px;height:17px;flex:none}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,390px);gap:34px;align-items:start}
+.catalog{min-width:0}
+.filters{display:flex;gap:0;border-top:2px solid var(--navy);border-bottom:1px solid var(--line);background:var(--white)}
+.filters button{flex:1;border:0;border-bottom:2px solid transparent;background:none;margin-bottom:-1px;padding:15px 8px;color:var(--muted);font-weight:700;font-size:14px;white-space:nowrap}
+.filters button:hover{background:#f6f7f8;color:var(--navy)}
+.filters button[aria-pressed=true]{background:#eaf0f4;color:var(--navy);border-bottom-color:var(--navy)}
+.price-table{margin-top:16px;border-collapse:collapse;width:100%;table-layout:fixed;background:var(--white);text-align:left}
+.price-table thead{background:var(--navy);color:#fff}
+.price-table th,.price-table td{padding:14px 16px}
+.price-table thead th{font-size:13px;font-weight:600;padding-block:11px}
+.price-table thead th:nth-child(2){width:31%}
+.price-table thead th:last-child{width:115px}
+.price-table tbody tr{border:1px solid var(--line);border-width:0 1px 1px}
+.price-table tbody tr.selected{background:#f9f1ec;box-shadow:inset 3px 0 var(--accent)}
+.price-table tbody th{font-weight:700}
+.tariff{font-variant-numeric:tabular-nums;color:var(--navy);font-weight:700}
+.tariff small{color:var(--muted);font-size:12px;font-weight:400;white-space:nowrap}
+.row-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:6px;border:1px solid #cbd4db;background:var(--white);color:var(--navy);padding:6px 9px;border-radius:3px;white-space:nowrap;font-size:12px;font-weight:700;min-height:34px}
+.row-btn:hover{border-color:var(--navy);background:#eaf0f4}
+.row-btn[aria-pressed=true]{color:var(--accent);border-color:#c9a294;background:#fff8f4}
+.row-btn span[aria-hidden]{font-size:15px;line-height:1}
+.catalog-foot{margin:15px 0 0;display:grid;gap:4px;color:var(--muted);font-size:13px}
+.catalog-foot p+p{margin-top:2px}
+.quote{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--accent);scroll-margin-top:15px}
+.quote-inner{padding:21px 23px 18px}
+.quote h2{color:var(--navy);font-size:25px;letter-spacing:-.033em;line-height:1.1}
+.chosen{display:flex;flex-direction:column;gap:1px;margin:15px 0 14px;padding:9px 11px;border-left:2px solid var(--accent);background:var(--peach);font-weight:700;color:var(--ink);font-size:14px}
+.chosen small{font-size:12px;font-weight:400;color:#5d4b41}
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{min-width:0;margin:0 0 10px}
+label,.label{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+input:not([type=file]),select,textarea{width:100%;min-height:39px;border:1px solid #c8ced0;border-radius:3px;background:#fff;color:var(--ink);padding:7px 9px}
+textarea{resize:vertical;min-height:64px;display:block}
+input::placeholder,textarea::placeholder{color:#68757e;opacity:1}
+.unit-input{position:relative}
+.unit-input input{padding-right:72px;appearance:textfield}
+.unit-input input::-webkit-outer-spin-button,.unit-input input::-webkit-inner-spin-button{appearance:none;margin:0}
+.unit{pointer-events:none;position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--muted)}
+.estimate{background:#edf2f5;padding:9px 11px 8px;margin:1px 0 13px;border-radius:2px}
+.estimate-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--navy)}
+#amount{font-size:20px;letter-spacing:-.025em;color:var(--navy);font-variant-numeric:tabular-nums}
+.estimate p{font-size:12px;line-height:1.3;color:var(--muted);margin-top:2px}
+.clip{width:100%;min-height:38px;display:flex;align-items:center;justify-content:flex-start;gap:7px;border:1px dashed #9ba9b4;border-radius:3px;background:#fff;color:var(--navy);font-size:13px;font-weight:700;padding:7px 10px}
+.clip:hover{background:#f4f7f9}
+.files{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+.files li{font-size:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;overflow-wrap:anywhere;margin-top:4px}
+.files button{background:#fff;border:1px solid #ccd4d8;border-radius:3px;min-width:28px;min-height:28px;color:var(--navy)}
+.file-status{font-size:12px;color:var(--accent);margin-top:3px}
+.file-status:empty{display:none}
+details{margin:0 0 11px}
+summary{font-size:13px;color:var(--navy);cursor:pointer;width:fit-content;text-decoration:underline;text-underline-offset:3px}
+details .field{margin-top:8px}
+.primary{border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:3px;min-height:43px;padding:8px 13px;font-weight:700;text-align:center;width:100%}
+.primary:hover{background:#244e72}
+.hint{color:var(--muted);font-size:12px;margin:7px 0 0}
+footer{border-top:1px solid var(--line);background:#efeee9;color:var(--muted);font-size:13px}
+.footer-row{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:12px 22px;flex-wrap:wrap;padding-block:12px}
+.footer-row strong{color:var(--navy)}
+dialog{width:min(520px,calc(100% - 30px));max-height:calc(100% - 24px);padding:24px;border:1px solid var(--line);border-top:3px solid var(--accent);color:var(--ink)}
+dialog::backdrop{background:#14293bc2}
+.dialog-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+dialog h2{font-size:24px;letter-spacing:-.03em;color:var(--navy)}
+.dialog-close{width:34px;height:34px;border:1px solid var(--line);background:var(--white);color:var(--navy);font-size:22px;line-height:1;border-radius:3px}
+#review{margin:14px 0;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:14px;background:var(--paper);padding:14px}
+#copy-state{min-height:18px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:1050px){
+ .wrap{padding-inline:27px}
+ .layout{gap:24px;grid-template-columns:minmax(0,1fr) minmax(310px,350px)}
+ .price-table th,.price-table td{padding-inline:12px}
+ .filters button{font-size:13px}
+ .quote-inner{padding-inline:17px}
+}
+@media(max-width:780px){
+ .layout{grid-template-columns:1fr;gap:23px}
+ .wrap{padding-inline:19px}
+ .header-row{min-height:60px;gap:12px}
+ .brand strong{font-size:21px}
+ nav{display:none}
+ main{padding-block:25px 32px}
+ .intro{display:block;margin-bottom:21px}
+ .pdf{margin-top:13px;font-size:13px}
+ .quote-inner{padding:18px}
+ .filters{min-width:0}
+ .filters button{flex:1;white-space:normal;padding-inline:5px}
+}
+@media(max-width:420px){
+ .wrap{padding-inline:14px}
+ .tel{font-size:14px}
+ .brand svg{width:26px;height:26px}
+ .price-table th,.price-table td{padding-inline:8px}
+ .price-table thead th:nth-child(2){width:31%}
+ .price-table thead th:last-child{width:91px}
+ .price-table tbody th,.tariff{font-size:13px}
+ .tariff small{display:block}
+ .row-btn{padding:5px 6px;font-size:11px;min-height:38px}
+ .filters button{font-size:12px}
+}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+/* Сетка страницы прайса */
+:root{--paper:#f1f4f7;--white:#fff;--ink:#192a3b;--muted:#556679;--line:#dce4ec;--navy:#122e49;--accent:#184e7d;--peach:#edf4fb;--focus:#2165a0}
+body{font-family:"Segoe UI",Arial,sans-serif}
+.wrap{max-width:1296px;padding-inline:46px}
+header{background:var(--navy);border-bottom:0;color:white}
+.header-row{min-height:68px;gap:34px}
+.brand{color:#fff;gap:12px}
+.brand svg{width:32px;height:32px}
+.brand strong{font-size:23px;letter-spacing:.095em}
+nav{margin-left:35px;gap:28px}
+nav a{color:#bfcfdf;padding-inline:2px}
+nav a:hover,nav a[aria-current]{color:white;border-color:#a7c3e0}
+.tel{color:#fff;font-size:14px}
+main{padding-block:30px 42px}
+.intro{align-items:center;position:relative;min-height:138px;margin-bottom:26px;padding:4px 0 9px;border-bottom:1px solid var(--line)}
+.crumb{color:#586c80;margin-bottom:12px}
+h1{font-size:clamp(34px,4.3vw,57px);max-width:750px;letter-spacing:-.05em;line-height:1.03}
+.intro p:last-child:not(.crumb){margin-top:13px;font-size:16px;color:var(--muted)}
+.blueprint{display:block;width:236px;height:112px;color:#7894b0;flex:none;align-self:center;margin-right:5px}
+.layout{grid-template-columns:minmax(0,1fr) minmax(350px,400px);gap:26px}
+.catalog{background:var(--white);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.catalog-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 21px 17px}
+.catalog-head h2{font-size:24px;letter-spacing:-.035em;line-height:1.15;color:var(--navy)}
+.pdf{margin:0;white-space:nowrap;color:var(--accent);font-weight:600;text-decoration:none}
+.pdf:hover{text-decoration:underline}
+.filters{margin:0 21px;gap:5px;border:0;border-radius:6px;padding:4px;background:#edf1f5}
+.filters button{margin:0;border:0;border-radius:4px;padding:9px 6px;min-height:39px}
+.filters button[aria-pressed=true]{background:var(--white);color:var(--accent);box-shadow:0 1px 3px #17375228}
+.filters button:hover{background:#f9fbfd}
+.price-table{width:calc(100% - 42px);margin:14px 21px 0;background:var(--white)}
+.price-table th,.price-table td{padding:10px 13px}
+.price-table thead{background:#edf2f7;color:var(--navy)}
+.price-table thead th{font-weight:700;padding-block:9px}
+.price-table thead th:first-child{border-radius:4px 0 0 4px}
+.price-table thead th:last-child{border-radius:0 4px 4px 0;width:127px}
+.price-table tbody tr{border-width:0 0 1px}
+.price-table tbody tr.selected{background:#ebf4fc;box-shadow:inset 3px 0 #246397}
+.price-table tbody tr:hover:not(.selected){background:#f7f9fc}
+.tariff small{color:var(--muted);font-size:12px}
+.row-btn{font-size:13px;min-height:33px;border-color:#cfdeeb;padding-inline:9px;border-radius:5px}
+.row-btn[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.row-btn span[aria-hidden]{font-size:14px}
+.catalog-foot{margin:0;padding:15px 21px 18px;min-height:48px;font-size:13px}
+.quote{border:1px solid var(--line);border-radius:9px}
+.quote-inner{padding:20px 20px 18px}
+.quote h2{font-size:24px;letter-spacing:-.035em}
+.chosen{padding:10px 11px;gap:2px;margin:13px 0;border-left:3px solid #246397;background:#edf4fa;border-radius:0 5px 5px 0}
+.chosen small{color:#476076}
+.input-grid{gap:9px}
+label,.label{color:#273c51}
+input:not([type=file]),select,textarea{border-color:#ccd8e3;border-radius:5px;min-height:39px}
+.unit-input input{padding-right:46px}
+.estimate{margin:0 0 11px;padding:8px 0 0;background:transparent;border-top:1px solid var(--line);border-radius:0}
+.estimate-top{font-size:13px;font-weight:700}
+#amount{font-size:26px;line-height:1.12}
+.estimate p{margin-top:3px}
+.primary{background:var(--accent);border-color:var(--accent);border-radius:5px}
+.primary:hover{background:#123e64}
+.clip{border-radius:5px;min-height:51px;border-color:#9bb1c6;background:#f8fbfe;justify-content:flex-start;gap:10px}
+.clip:hover,.clip.dragging{background:#eaf4fe;border-color:var(--accent)}
+.clip svg{width:19px;height:19px}
+.clip span{display:grid;text-align:left;line-height:1.35}
+.clip small{font-size:11px;font-weight:400;color:var(--muted)}
+.files li{padding:3px 7px;background:#f1f5f9;border-radius:4px}
+.files li span{margin-right:auto}
+details{margin:0 0 9px}
+summary{width:auto;font-size:13px;text-decoration:none}
+summary:hover{text-decoration:underline}
+.mode-link{border:0;padding:0;margin:0 0 8px;background:transparent;color:var(--accent);font-size:12px;text-decoration:underline;text-underline-offset:2px}
+footer{background:#eaf0f6;border-top:1px solid var(--line)}
+.footer-row{min-height:64px}
+dialog{border-top:3px solid var(--accent);border-radius:7px}
+@media(max-width:1100px){
+ .wrap{padding-inline:25px}
+ .layout{grid-template-columns:minmax(0,1fr) minmax(330px,375px);gap:20px}
+ .blueprint{width:190px}
+}
+@media(max-width:810px){
+ .wrap{padding-inline:18px}
+ .header-row{min-height:60px;gap:12px}
+ nav{display:none}
+ main{padding-block:22px 32px}
+ .intro{display:block;min-height:0;padding-bottom:15px;margin-bottom:16px}
+ .blueprint{display:none}
+ .intro p:last-child:not(.crumb){font-size:14px;margin-top:10px}
+ .layout{grid-template-columns:1fr;gap:18px}
+ .quote-inner{padding:17px 16px}
+ .catalog-head{padding:15px 12px 12px}
+ .catalog-head h2{font-size:21px}
+ .filters{margin:0 11px;gap:2px}
+ .filters button{font-size:12px}
+ .price-table{width:calc(100% - 22px);margin:11px 11px 0}
+ .price-table th,.price-table td{padding-inline:7px}
+ .price-table thead th:last-child{width:99px}
+ .row-btn{font-size:11px;padding-inline:6px;min-height:40px}
+ .catalog-foot{padding:11px 12px;font-size:12px}
+}
+@media(max-width:420px){
+ .wrap{padding-inline:12px}
+ .brand strong{font-size:20px}
+ .brand svg{width:26px;height:26px}
+ .tel{font-size:13px}
+ .pdf{font-size:12px}
+ .tariff small{display:block}
+ .filters button{min-height:41px}
+}
+</style>
+</head>
+<body>
+<header id="top">
+ <div class="wrap header-row">
+  <a class="brand" href="https://coloring74.ru/" aria-label="ЛИДЕР, действующий сайт"><svg class="brand-mark" viewBox="0 0 72 72" aria-hidden="true"><polygon points="30,5 49,10 48,27 31,27" fill="#316cb9"/><polygon points="50,10 66,26 53,38 41,26" fill="#8350b3"/><polygon points="66,28 64,47 46,49 52,36" fill="#d63496"/><polygon points="63,49 47,65 32,52 45,43" fill="#ec343d"/><polygon points="45,65 24,64 26,48 36,52" fill="#f68a2c"/><polygon points="21,63 6,45 21,33 30,46" fill="#ed552c"/><polygon points="6,42 8,21 26,24 22,35" fill="#34b6e1"/><polygon points="10,19 27,5 34,20 22,27" fill="#4ea6e7"/><polygon points="26,27 40,25 48,35 43,48 29,49 21,38" fill="#fff"/></svg><strong>ЛИДЕР</strong></a>
+  <nav aria-label="Разделы"><a href="#price" aria-current="page">Прайс</a><a href="https://coloring74.ru/gallery.html">Наши работы</a><a href="#contacts">Контакты</a></nav>
+  <a class="tel" href="tel:+73512238986">+7 (351) 223-8-986</a>
+ </div>
+</header>
+<main class="wrap">
+ <div class="intro">
+  <div>
+   <p class="crumb"><a href="https://coloring74.ru/">Главная</a><span aria-hidden="true">/</span>Прайс</p>
+   <h1>Прайс на порошковую окраску</h1>
+   <p>Выберите позицию в прайсе, чтобы начать расчёт.</p>
+  </div>
+  <svg class="blueprint" viewBox="0 0 248 119" fill="none" aria-hidden="true">
+   <defs><pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0v16" stroke="#d7e2ee" stroke-width=".8"/></pattern></defs>
+   <path d="M2 0h246v119H2z" fill="url(#grid)"/>
+   <g stroke="currentColor" stroke-linejoin="round"><path d="m23 62 92-31 36 13-92 33z" fill="#e8eef5"/><path d="m23 62 36 15v23L23 85z" fill="#d4e0ed"/><path d="m59 77 92-33v23l-92 33z" fill="#e2ebf3"/><path d="m29 69 24 10v12L29 81z" fill="#f1f4f7"/><path d="m136 32 48-17 36 13-48 17z" fill="#e8eef5"/><path d="m136 32 36 13v23l-36-13z" fill="#d4e0ed"/><path d="m172 45 48-17v23l-48 17z" fill="#e2ebf3"/><path d="m142 39 24 9v12l-24-9z" fill="#f1f4f7"/>
+    <path d="M80 100h81m-79-4v8m77-8v8m68-71v20m-4-19h8m-8 18h8M23 53l83-28" stroke="#849fb9" stroke-dasharray="3 3"/>
+   </g>
+  </svg>
+ </div>
+ <div class="layout">
+  <section class="catalog" id="price" aria-labelledby="catalog-title">
+   <div class="catalog-head"><h2 id="catalog-title">Прайс-лист</h2>
+  <a class="pdf" href="https://coloring74.ru/files/pages/file/price0706.PDF">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4"/></svg> Прайс в PDF
+  </a>
+   </div>
+   <div class="filters" role="group" aria-label="Виды изделий">
+    <button data-category="flat" type="button" aria-pressed="true">Плоские изделия</button>
+    <button data-category="profile" type="button" aria-pressed="false">Профиль и трубы</button>
+    <button data-category="discs" type="button" aria-pressed="false">Диски</button>
+    <button data-category="other" type="button" aria-pressed="false">Прочие изделия</button>
+   </div>
+   <table class="price-table">
+    <caption id="caption" class="sr">Плоские изделия</caption>
+    <thead><tr><th scope="col" id="column-label">Площадь окраски</th><th scope="col">Тариф</th><th scope="col"><span class="sr">Выбор позиции</span></th></tr></thead>
+    <tbody id="tariff-rows"></tbody>
+   </table>
+   <div class="catalog-foot">
+    <p id="category-note">Для глянцевого покрытия. Матовые покрытия и жёлтые цвета рассчитываются отдельно.</p>
+   </div>
+   <noscript><p>Чтобы использовать форму расчёта, включите JavaScript. Полный прайс доступен по ссылке PDF.</p></noscript>
+  </section>
+  <section class="quote" id="quote" tabindex="-1" aria-labelledby="quote-title">
+   <div class="quote-inner">
+    <h2 id="quote-title">Заявка на расчёт</h2>
+    <div class="chosen" id="chosen" aria-live="polite"><span id="chosen-name">Плоские изделия</span><small id="chosen-detail">До 150 м² · глянец</small></div>
+    <form id="form">
+     <button type="button" class="mode-link" id="dimension-mode" aria-expanded="false" aria-controls="dimensions">Рассчитать площадь по размерам</button>
+     <div id="dimensions" hidden>
+      <div class="input-grid">
+       <div class="field"><label for="width">Ширина, мм</label><input id="width" type="number" min="1" step="any" inputmode="decimal"></div>
+       <div class="field"><label for="height">Длина, мм</label><input id="height" type="number" min="1" step="any" inputmode="decimal"></div>
+      </div>
+      <div class="field"><label for="parts">Количество деталей</label><input id="parts" type="number" min="1" step="1" inputmode="numeric"></div>
+     </div>
+     <div class="input-grid">
+      <div class="field">
+       <label for="qty" id="qty-label">Общая площадь</label>
+       <div class="unit-input"><input type="number" id="qty" min="0.01" max="10000000" step="any" inputmode="decimal" required placeholder="Например, 20"><span class="unit" id="qty-unit">м²</span></div>
+      </div>
+      <div class="field" id="finish-wrap">
+       <label for="finish">Покрытие</label>
+       <select id="finish"><option value="standard">Глянец</option><option value="manual">Матовое, жёлтое или другое</option></select>
+      </div>
+      <div class="field" id="work-wrap" hidden>
+       <label for="work">Вид работы</label>
+       <select id="work"><option value="one">Окраска в один слой</option><option value="two">Окраска в два слоя</option><option value="blast">Только пескоструй</option></select>
+      </div>
+     </div>
+     <div class="estimate" role="status">
+      <div class="estimate-top"><span>Предварительная стоимость</span><strong id="amount">—</strong></div>
+      <p id="formula">Укажите площадь, чтобы увидеть сумму.</p>
+     </div>
+     <div class="field">
+      <button type="button" class="clip photo-drop" id="pick-photo">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><path d="M8 13.7l5.9-5.9a2 2 0 0 1 2.8 2.8l-7.6 7.6a3.7 3.7 0 0 1-5.2-5.2l8-8a5 5 0 0 1 7.1 7.1l-8.1 8.1"/></svg><span>Добавить фото или чертёж<small>До 5 файлов, до 10 МБ каждый</small></span>
+      </button>
+      <input id="photo" type="file" accept="image/*,.pdf,.dwg,.dxf" multiple hidden>
+      <p class="file-status" id="file-status" role="status"></p>
+      <ul class="files" id="file-list" aria-label="Выбранные файлы"></ul>
+     </div>
+     <details>
+      <summary id="details-label">Цвет и примечание</summary>
+      <div class="field" id="ral-wrap"><label for="ral">Цвет / RAL</label><input id="ral" maxlength="60" placeholder="Если известен"></div>
+      <div class="field"><label class="sr" for="comment">Примечание</label><textarea id="comment" maxlength="2000" placeholder="Размеры, состояние деталей или пожелания к покрытию"></textarea></div>
+     </details>
+     <div class="input-grid">
+      <div class="field"><label for="name">Имя</label><input id="name" name="name" autocomplete="name" required maxlength="90" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label for="phone">Телефон</label><input id="phone" name="tel" type="tel" autocomplete="tel" maxlength="24" required placeholder="+7" aria-describedby="phone-hint"><span class="sr" id="phone-hint">От 10 до 15 цифр</span></div>
+     </div>
+     <button type="submit" class="primary" id="review-button" disabled>Посмотреть заявку</button>
+    </form>
+   </div>
+  </section>
+ </div>
+</main>
+<footer id="contacts"><div class="wrap footer-row">
+ <div><strong>ЛИДЕР</strong> · Челябинск, ул. Героев Танкограда, 15П/3</div>
+ <a href="mailto:2238986@mail.ru">2238986@mail.ru</a>
+ <a href="https://coloring74.ru/">coloring74.ru</a>
+</div></footer>
+<dialog aria-labelledby="review-title" id="dialog">
+ <div class="dialog-head"><h2 id="review-title">Предпросмотр заявки</h2><form method="dialog"><button type="submit" class="dialog-close" aria-label="Закрыть">×</button></form></div>
+ <p class="hint">Заявка не отправлена.</p>
+ <pre id="review"></pre>
+ <button type="button" class="primary" id="copy">Скопировать текст</button>
+ <p class="hint" role="status" id="copy-state"></p>
+</dialog>
+<script id="rates">
+const flats=[
+ ['До 150 м²',220,0],['150–300 м²',205,150],['300–500 м²',190,300],
+ ['500–1 000 м²',175,500],['1 000–3 000 м²',160,1000],['От 3 000 м²',155,3000]
+];
+const profiles=[
+ ['До 80 мм',20,20,null],['80–150 мм',30,105,150],['150–200 мм',40,140,200],['200–250 мм',50,175,250],['250–300 мм',60,210,300],['300–350 мм',70,245,350]
+];
+const wheels=[
+ ['R13–R14',2000,3000,2500],['R15–R16',2500,3500,3000],['R17–R18',3000,4000,3500],
+ ['R19–R20',3500,4500,4000],['R21–R22',4000,5000,4500]
+];
+const catalog={
+ flat:{name:'Плоские изделия',column:'Площадь окраски',unit:'м²',qty:'Общая площадь',example:'Например, 20',note:'Для глянцевого покрытия. Матовые покрытия и жёлтые цвета рассчитываются отдельно.',rows:flats.map(([label,price,min])=>({label,price,min,kind:'flat'}))},
+ profile:{name:'Профиль и трубы',column:'Периметр изделия',unit:'пог. м',qty:'Общая длина',example:'Например, 40',note:'Тарифы в таблице — за окраску цельного профиля в один цвет.',rows:profiles.map(([label,price,side,dual])=>({label,price,side,dual,kind:'profile'}))},
+ discs:{name:'Диски',column:'Диаметр диска',unit:'компл.',qty:'Комплектов по 4 шт.',example:'Например, 1',note:'В таблице — окраска в один слой. В заявке можно выбрать два слоя или пескоструйную обработку без окраски.',rows:wheels.map(([label,price,two,blast])=>({label,price,two,blast,kind:'discs'}))},
+ other:{name:'Прочие изделия',column:'Изделие',unit:'шт.',qty:'Количество',example:'Например, 5',note:'Для заявки на объёмные изделия можно приложить фото или чертёж.',rows:[
+  {label:'Стальные двери',price:500},{label:'Сэндвич-панели',price:300},{label:'Объёмные изделия',price:250}
+ ].map(row=>({...row,kind:'other'}))}
+};
+const format=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:2});
+const fmt=n=>format.format(n);
+function areaFromParts(width,height,count){
+ if(![width,height,count].every(Number.isFinite)||width<1||height<1||count<1||!Number.isInteger(count))return null;
+ const area=width*height*count/1e6;
+ return area>1e7?null:area;
+}
+function validQty(row,qty){return Number.isFinite(qty)&&qty>0&&qty<=1e7&&(!['discs','other'].includes(row.kind)||Number.isInteger(qty))}
+function estimate(row,qty,work,finish){
+ if(!validQty(row,qty))return {total:null};
+ if(row.kind==='other'||finish==='manual'&&['flat','profile'].includes(row.kind))return {total:null,manual:true};
+ const rate=row.kind==='flat'?catalog.flat.rows.reduce((best,entry)=>qty>=entry.min?entry:best,catalog.flat.rows[0]):row;
+ let price=rate.price;
+ if(row.kind==='discs'&&['two','blast'].includes(work))price=row[work];
+ if(row.kind==='profile'){
+  if(work==='cut')price*=1.5;
+  if(['side','dual'].includes(work))price=row[work];
+  if(price===null)return {total:null,manual:true};
+ }
+ return {total:Math.round(qty*price*100)/100,price,rate};
+}
+</script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const categoryButtons=[...document.querySelectorAll('[data-category]')];
+let viewing='flat', selected=catalog.flat.rows[0], attachments=[], byDimensions=false;
+const dimensionInputs=[$('width'),$('height'),$('parts')];
+const qty=$('qty'), work=$('work'), finish=$('finish'), photo=$('photo'), phone=$('phone'), nameField=$('name'), form=$('form'), dialog=$('dialog');
+function el(tag,content,className){
+ const node=document.createElement(tag);
+ if(content!==undefined)node.textContent=content;
+ if(className)node.className=className;
+ return node;
+}
+function renderTable(){
+ const cat=catalog[viewing];
+ $('caption').textContent=cat.name;
+ $('column-label').textContent=cat.column;
+ $('category-note').textContent=cat.note;
+ categoryButtons.forEach(b=>b.setAttribute('aria-pressed',String(viewing===b.dataset.category)));
+ $('tariff-rows').replaceChildren(...cat.rows.map(row=>{
+  const tr=el('tr',undefined,row===selected?'selected':'');
+  const label=el('th',row.label);label.scope='row';
+  const price=el('td',undefined,'tariff');
+  price.append(document.createTextNode((viewing==='other'?'от ':'')+fmt(row.price)+' ₽ '),
+    el('small',viewing==='other'?'за м²':'за '+cat.unit));
+  const choice=el('td'), button=el('button',row===selected?'Выбрано':'В расчёт','row-btn');
+  const arrow=el('span',row===selected?'✓':'↗');arrow.setAttribute('aria-hidden','true');
+  button.type='button';button.setAttribute('aria-pressed',String(row===selected));button.append(arrow);
+  button.addEventListener('click',()=>{
+   if(selected!==row){
+    qty.value='';finish.value='standard';work.value='one';byDimensions=false;
+    dimensionInputs.forEach(field=>{field.value=''});
+    selected=row;
+    renderFields();
+    renderTable();
+   }
+   const mobile=matchMedia('(max-width:810px)').matches;
+   if(mobile){$('quote').scrollIntoView({block:'start'});$('quote').focus({preventScroll:true})}
+   else (byDimensions?dimensionInputs[0]:qty).focus({preventScroll:true});
+  });
+  choice.append(button);tr.append(label,price,choice);return tr;
+ }));
+}
+function renderFields(){
+ const {kind,label}=selected,cat=catalog[kind];
+ $('chosen-name').textContent=kind==='other'?label:kind==='discs'?'Автомобильные диски':cat.name;
+ $('chosen-detail').textContent=kind==='flat'?label+' · глянец':kind==='other'?'Расчёт по размерам изделия':label;
+ $('qty-label').textContent=cat.qty;
+ $('qty-unit').textContent=cat.unit;
+ qty.placeholder=cat.example;
+ const integer=['discs','other'].includes(kind);
+ qty.min=integer?'1':'0.000001';qty.step=integer?'1':'any';qty.inputMode=integer?'numeric':'decimal';
+ $('finish-wrap').hidden=kind!=='flat';
+ $('work-wrap').hidden=!['discs','profile'].includes(kind);
+ const options=kind==='profile'?[['one','Один цвет'],['cut','Резаный профиль'],['side','Окраска одной стороны'],['dual','Две стороны, два цвета']]:
+ [['one','Окраска в один слой'],['two','Окраска в два слоя'],['blast','Только пескоструй']];
+ work.replaceChildren(...options.map(([v,l])=>{const o=el('option',l);o.value=v;return o}));
+ work.value='one';
+ syncDimensions();update();
+}
+function syncDimensions(){
+ $('dimension-mode').hidden=selected.kind!=='flat';
+ $('dimensions').hidden=!byDimensions;
+ $('dimension-mode').setAttribute('aria-expanded',String(byDimensions));
+ $('dimension-mode').textContent=byDimensions?'Ввести площадь вручную':'Рассчитать площадь по размерам';
+ qty.readOnly=byDimensions;qty.required=!byDimensions;
+ dimensionInputs.forEach(field=>{field.disabled=!byDimensions;field.required=byDimensions});
+}
+function volume(){
+ return byDimensions?areaFromParts(...dimensionInputs.map(field=>field.valueAsNumber)):qty.valueAsNumber;
+}
+function calculation(){return estimate(selected,volume(),work.value,finish.value)}
+function update(){
+ const {kind}=selected,cat=catalog[kind], current=calculation();
+ const manual=kind==='other'||kind==='flat'&&finish.value==='manual'||kind==='profile'&&work.value==='dual'&&selected.dual===null;
+ const units=volume();
+ $('parts').setCustomValidity(byDimensions&&dimensionInputs.every(field=>field.value!=='')&&units===null?'Проверьте размеры и количество деталей.':'');
+ if(byDimensions)qty.value=units===null?'':String(Math.round(units*1e6)/1e6);
+ const blasting=kind==='discs'&&work.value==='blast';
+ $('ral-wrap').hidden=blasting;
+ $('details-label').textContent=blasting?'Добавить примечание':'Цвет и примечание';
+ $('amount').textContent=manual?'По запросу':current.total===null?'—':fmt(current.total)+' ₽';
+ $('chosen-detail').textContent=kind==='flat'?selected.label+(finish.value==='standard'?' · глянец':''):kind==='other'?'Расчёт по размерам изделия':selected.label;
+ if(manual){
+  $('formula').textContent=kind==='other'?'Приложите фото или чертёж изделия.':kind==='profile'?'Для этого профиля в прайсе нет тарифа на два цвета.':'Стоимость этого покрытия рассчитывается отдельно.';
+ }else if(current.total===null){
+  $('formula').textContent={flat:'Укажите площадь, чтобы увидеть сумму.',profile:'Укажите общую длину, чтобы увидеть сумму.',discs:'Укажите целое количество комплектов.'}[kind];
+ }else{
+  $('formula').textContent=fmt(units)+' '+cat.unit+' × '+fmt(current.price)+' ₽'+(kind==='flat'&&current.rate!==selected?' · тариф по введённой площади':'');
+ }
+}
+categoryButtons.forEach(b=>b.addEventListener('click',()=>{viewing=b.dataset.category;renderTable()}));
+[qty,finish,work,...dimensionInputs].forEach(n=>n.addEventListener('input',update));
+$('dimension-mode').addEventListener('click',()=>{
+ byDimensions=!byDimensions;syncDimensions();update();
+ (byDimensions?dimensionInputs[0]:qty).focus();
+});
+const drop=$('pick-photo');
+drop.addEventListener('click',()=>photo.click());
+drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('dragging')});
+drop.addEventListener('dragleave',()=>drop.classList.remove('dragging'));
+drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('dragging');handleFiles(e.dataTransfer.files)});
+photo.addEventListener('change',()=>handleFiles(photo.files));
+function handleFiles(files){
+ let warning='';
+ for(const file of files){
+  if(!file.type.startsWith('image/')&&!/\.(jpe?g|png|webp|gif|heic|heif|avif|bmp|tiff?|pdf|dwg|dxf)$/i.test(file.name)){
+   warning='Формат файла не поддерживается.';continue;
+  }
+  if(file.size>10*1024*1024){warning='Максимальный размер файла — 10 МБ.';continue}
+  if(attachments.some(f=>f.name===file.name&&f.size===file.size&&f.lastModified===file.lastModified))continue;
+  if(attachments.length>=5){warning='Можно прикрепить до 5 файлов.';break}
+  attachments.push(file);
+ }
+ $('file-status').textContent=warning;photo.value='';renderAttachments();
+}
+function renderAttachments(){
+ $('file-list').replaceChildren(...attachments.map((file,i)=>{
+  const li=el('li'), b=el('button','×');
+  b.type='button';b.setAttribute('aria-label','Убрать '+file.name);
+  b.addEventListener('click',()=>{attachments.splice(i,1);$('file-status').textContent='';renderAttachments();$('pick-photo').focus()});
+  li.append(el('span',file.name),b);return li;
+ }));
+}
+function phoneValid(){
+ const digits=phone.value.replace(/\D/g,'');
+ phone.setCustomValidity(/^[0-9+()\s-]+$/.test(phone.value)&&digits.length>=10&&digits.length<=15?'':'Укажите телефон (от 10 до 15 цифр).');
+}
+phone.addEventListener('input',phoneValid);
+nameField.addEventListener('input',()=>nameField.setCustomValidity(nameField.value.trim()?'':'Введите имя.'));
+form.addEventListener('submit',e=>{
+ e.preventDefault();phoneValid();
+ nameField.setCustomValidity(nameField.value.trim()?'':'Введите имя.');
+ if(!form.reportValidity())return;
+ const {kind,label}=selected, cat=catalog[kind], current=calculation();
+ const lines=[
+  'Изделие: '+(kind==='other'?label:cat.name+', '+label),
+  cat.qty+': '+fmt(volume())+' '+cat.unit
+ ];
+ if(byDimensions)lines.push('Детали: '+dimensionInputs[2].value+' шт. × '+dimensionInputs[0].value+' × '+dimensionInputs[1].value+' мм (одна сторона)');
+ if(kind==='flat')lines.push('Покрытие: '+finish.selectedOptions[0].text);
+ if(kind==='discs'||kind==='profile')lines.push('Работа: '+work.selectedOptions[0].text);
+ if(!$('ral-wrap').hidden&&$('ral').value.trim())lines.push('Цвет: '+$('ral').value.trim());
+ if(kind==='flat'&&current.rate&&current.rate!==selected)lines.push('Тариф по площади: '+current.rate.label);
+ lines.push('Предварительная стоимость: '+(current.total!==null?fmt(current.total)+' ₽':'по запросу'));
+ if($('comment').value.trim())lines.push('Примечание: '+$('comment').value.trim());
+ if(attachments.length)lines.push('Файлы: '+attachments.map(f=>f.name).join(', '));
+ lines.push('','Имя: '+nameField.value.trim(),'Телефон: '+phone.value.trim());
+ $('review').textContent=lines.join('\n');
+ $('copy-state').textContent='';dialog.showModal();
+});
+$('copy').addEventListener('click',async()=>{
+ try{await navigator.clipboard.writeText($('review').textContent);$('copy-state').textContent='Текст скопирован.'}
+ catch{
+  const range=document.createRange();range.selectNodeContents($('review'));
+  const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
+  $('copy-state').textContent='Текст выделен. Нажмите Ctrl+C или ⌘C.';
+ }
+});
+renderTable();renderFields();$('review-button').disabled=false;
+</script>
+</body>
+</html>
